@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BukutamuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/admin',[BukutamuController::class, 'index'])->name('bukutamu.index');
+Route::get('/',[BukutamuController::class, 'create'])->name('bukutamu.create');
+Route::post('/',[BukutamuController::class, 'store'])->name('bukutamu.store');
