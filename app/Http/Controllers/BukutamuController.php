@@ -18,6 +18,34 @@ class BukutamuController extends Controller
         $bukutamu = DB::table('buku_tamu')
             ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
             ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('welcome',compact('bukutamu'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    public function ulp(){
+        $bukutamu = DB::table('buku_tamu')
+            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
+            ->where('layanan', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('welcome',compact('bukutamu'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    public function lpse(){
+        $bukutamu = DB::table('buku_tamu')
+            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
+            ->where('layanan', '=', 2)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('welcome',compact('bukutamu'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    public function advokasi(){
+        $bukutamu = DB::table('buku_tamu')
+            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
+            ->where('layanan', '=', 3)
+            ->orderBy('created_at', 'desc')
             ->get();
         return view('welcome',compact('bukutamu'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
