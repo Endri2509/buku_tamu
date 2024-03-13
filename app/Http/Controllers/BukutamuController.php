@@ -16,7 +16,7 @@ class BukutamuController extends Controller
     {
         // Halaman Admin
         $bukutamu = DB::table('buku_tamu')
-            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->select('buku_tamu.nama','buku_tamu.no_hp', 'buku_tamu.email', 'buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
             ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
             ->orderBy('created_at', 'desc')
             ->get();
@@ -24,7 +24,7 @@ class BukutamuController extends Controller
     }
     public function ulp(){
         $bukutamu = DB::table('buku_tamu')
-            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->select('buku_tamu.nama','buku_tamu.no_hp', 'buku_tamu.email', 'buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
             ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
             ->where('layanan', '=', 1)
             ->orderBy('created_at', 'desc')
@@ -33,7 +33,7 @@ class BukutamuController extends Controller
     }
     public function lpse(){
         $bukutamu = DB::table('buku_tamu')
-            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->select('buku_tamu.nama','buku_tamu.no_hp', 'buku_tamu.email', 'buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
             ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
             ->where('layanan', '=', 2)
             ->orderBy('created_at', 'desc')
@@ -42,7 +42,7 @@ class BukutamuController extends Controller
     }
     public function advokasi(){
         $bukutamu = DB::table('buku_tamu')
-            ->select('buku_tamu.nama','buku_tamu.no_hp','buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->select('buku_tamu.nama','buku_tamu.no_hp', 'buku_tamu.email', 'buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
             ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
             ->where('layanan', '=', 3)
             ->orderBy('created_at', 'desc')
@@ -66,6 +66,7 @@ class BukutamuController extends Controller
         $validated = $request -> validate([
             'nama' => 'required',
             'no_hp' => 'required|numeric',
+            'email' => 'required',
             'instansi' => 'required',
             'layanan' => 'required',
         ]);

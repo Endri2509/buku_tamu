@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buku Tamu SPJ</title>
+    <title>Buku Tamu PBJ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
@@ -39,6 +39,9 @@
                     </div>
                     <div class="col mb-3">
                         <input type="text" class="form-control" name="no_hp" placeholder="No HP" autocomplete="off" value="{{ old('no_hp') }}">
+                    </div>
+                    <div class="col mb-3">
+                        <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
                     </div>
                     <div class="col mb-3">
                         <input type="text" class="form-control" name="instansi" placeholder="Instansi" autocomplete="off" value="{{ old('instansi') }}">

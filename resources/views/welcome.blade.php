@@ -31,6 +31,7 @@
                         <th>Tanggal</th>
                         <th>Nama</th>
                         <th>No HP</th>
+                        <th>Email</th>
                         <th>Instansi</th>
                         <th>Layanan</th>
                     </tr>
@@ -42,6 +43,7 @@
                             <td>{{ date( 'd-M-Y H:i:s',strtotime($item->created_at))  }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->no_hp }}</td>
+                            <td>{{ $item->email }}</td>
                             <td>{{ $item->instansi }}</td>
                             <td>{{ $item->nama_layanan }}</td>
                         </tr>
