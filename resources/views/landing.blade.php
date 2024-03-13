@@ -59,13 +59,7 @@
             </div>
             <div class="col">
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
-                    <li class="list-group-item list-group-item-info">A simple info list group item</li>
+                    <li class="list-group-item list-group-item-info">Silahkan mengisi form buku tamu yang telah disediakan</li>
                 </ul>
             </div>
         </div>
