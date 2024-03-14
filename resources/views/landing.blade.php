@@ -12,7 +12,7 @@
     <div class="container-fluid mt-3 text-center">
         <div class="row">
             <div class="container">
-                <img src="{{ asset('image/udinus.png') }}" class="img-fluid float-center" alt="LOGO" style=" width: 150px;">
+                <img src="{{ asset('image/logo.jpg') }}" class="img-fluid float-center" alt="LOGO" style=" width: 150px;">
             </div>
         </div>
         <div class="row mt-3">
@@ -38,7 +38,7 @@
                         <input type="text" class="form-control" name="nama" placeholder="Nama" autocomplete="off" value="{{ old('nama') }}">
                     </div>
                     <div class="col mb-3">
-                        <input type="text" class="form-control" name="no_hp" placeholder="No HP" autocomplete="off" value="{{ old('no_hp') }}">
+                        <input type="integer" class="form-control" name="no_hp" placeholder="No HP" autocomplete="off" value="{{ old('no_hp') }}">
                     </div>
                     <div class="col mb-3">
                         <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
