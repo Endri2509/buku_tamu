@@ -47,7 +47,7 @@ class BukutamuController extends Controller
             ->where('layanan', '=', 3)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('welcome',compact('bukutamu'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('welcome',compact('buku_tamu'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
     /**
@@ -79,7 +79,7 @@ class BukutamuController extends Controller
      */
     public function show(BukutamuModel $bukutamuModel)
     {
-        //
+       //
     }
 
     /**

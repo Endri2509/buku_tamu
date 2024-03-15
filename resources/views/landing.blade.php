@@ -38,7 +38,7 @@
                         <input type="text" class="form-control" name="nama" placeholder="Nama" autocomplete="off" value="{{ old('nama') }}">
                     </div>
                     <div class="col mb-3">
-                        <input type="integer" class="form-control" name="no_hp" placeholder="No HP" autocomplete="off" value="{{ old('no_hp') }}">
+                        <input type="text" class="form-control" name="no_hp" placeholder="No HP" autocomplete="off" value="{{ old('no_hp') }}">
                     </div>
                     <div class="col mb-3">
                         <input type="text" class="form-control" name="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
@@ -81,7 +81,7 @@
         Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "Terimakasih, selamat berkunnjung",
+            title: "Terimakasih, selamat berkunjung",
             showConfirmButton: false,
             timer: 2000
             });

@@ -11,6 +11,6 @@ class BukutamuModel extends Model
     protected $table='buku_tamu';
     protected $guarded ='id';
     protected $fillable = [
-        'nama','no_hp','email','instansi','layanan'
+        'nama','no_hp','email', 'instansi','layanan'
     ];
 }
