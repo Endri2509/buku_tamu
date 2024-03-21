@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Mar 2024 pada 05.15
+-- Waktu pembuatan: 19 Mar 2024 pada 05.17
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.4
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `buku_tamu` (
   `id` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `no_hp` int(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `instansi` varchar(255) NOT NULL,
-  `layanan` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` datetime DEFAULT NULL
+  `nama` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `no_hp` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `instansi` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `layanan` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,10 +43,20 @@ CREATE TABLE `buku_tamu` (
 --
 
 INSERT INTO `buku_tamu` (`id`, `nama`, `no_hp`, `email`, `instansi`, `layanan`, `created_at`, `updated_at`) VALUES
-(1, 'endri', 891234567, '', 'sachio', 3, '2024-03-12 19:09:45', '2024-03-13 02:09:45'),
-(2, 'endri', 85123456, '', 'sachio', 1, '2024-03-12 19:12:03', '2024-03-13 02:12:03'),
-(3, 'endri', 123456, 'endri@gmail.com', 'dahayu', 2, '2024-03-12 20:33:45', '2024-03-13 03:33:45'),
-(4, 'adi', 123456, 'adi@gmail.com', 'kopinan', 1, '2024-03-12 20:53:06', '2024-03-13 03:53:06');
+(1, 'endri', '891234567', '', 'sachio', '3', '2024-03-12 19:09:45', '2024-03-12 19:09:45'),
+(2, 'endri', '85123456', '', 'sachio', '1', '2024-03-12 19:12:03', '2024-03-12 19:12:03'),
+(3, 'endri', '123456', 'endri@gmail.com', 'dahayu', '2', '2024-03-12 20:33:45', '2024-03-12 20:33:45'),
+(4, 'adi', '123456', 'adi@gmail.com', 'kopinan', '1', '2024-03-12 20:53:06', '2024-03-12 20:53:06'),
+(5, 'endri', '123456', 'Endrianus@gmail.com', 'kopinan', '1', '2024-03-12 21:17:30', '2024-03-12 21:17:30'),
+(6, 'endri', '123456', 'Endrianus@gmail.com', 'kopinan', '1', '2024-03-12 21:17:50', '2024-03-12 21:17:50'),
+(7, 'budi', '897343268', 'budi@gmail.com', 'kopinan', '2', '2024-03-13 21:44:19', '2024-03-13 21:44:19'),
+(8, 'endri', '891234567', 'endri@gmail.com', 'londo', '3', '2024-03-14 18:23:59', '2024-03-14 18:23:59'),
+(9, 'toriq', '87123456', 'toriq@gmail.com', 'abc', '2', '2024-03-14 18:31:57', '2024-03-14 18:31:57'),
+(10, 'abc', '123345678', 'abc@gmail.com', 'def', '1', '2024-03-14 19:06:40', '2024-03-14 19:06:40'),
+(11, 'endri', '12345678', 'endri@gmail.com', 'londo', '2', '2024-03-18 18:20:56', '2024-03-18 18:20:56'),
+(12, 'thoriq', '987654321', 'thoriq@gmail.com', 'londo', '1', '2024-03-18 18:23:59', '2024-03-18 18:23:59'),
+(13, 'endri', '123456', 'endri@gmail.com', 'kopi', '3', '2024-03-18 18:39:57', '2024-03-18 18:39:57'),
+(14, 'endri', '1234567', 'endri@gmail.com', 'kopi', '2', '2024-03-18 18:48:28', '2024-03-18 18:48:28');
 
 -- --------------------------------------------------------
 
@@ -98,16 +108,6 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
 
 -- --------------------------------------------------------
 
@@ -221,7 +221,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `buku_tamu`
 --
 ALTER TABLE `buku_tamu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `cs`
