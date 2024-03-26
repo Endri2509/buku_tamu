@@ -6,6 +6,7 @@ use App\Models\BukutamuModel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Dompdf\Dompdf;
 
 class BukutamuController extends Controller
 {
@@ -104,6 +105,20 @@ class BukutamuController extends Controller
     public function destroy(BukutamuModel $bukutamuModel)
     {
         //
+    }
+
+    public function printPDF(BukutamuModel $bukutamuModel){
+        $bukutamu = DB::table('buku_tamu')
+            ->select('buku_tamu.nama','buku_tamu.no_hp', 'buku_tamu.email', 'buku_tamu.instansi', 'buku_tamu.created_at', 'layanan.nama_layanan')
+            ->join('layanan', 'buku_tamu.layanan', '=', 'layanan.id')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        
+        $pdf = new Dompdf();
+        $pdf->loadHtml(view('printPDF', ['bukutamu'=>$bukutamu]));
+        $pdf->setPaper('A4', 'portrait');
+        $pdf->render();
+        return $pdf->stream('Buku Tamu.pdf', ['Attachment' => false]);
     }
     
 }

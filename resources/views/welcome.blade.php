@@ -2,12 +2,12 @@
 
 @section('content')
     <!-- Page Heading -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1 class="h3 mb-4 text-gray-800">Hasil Kunjungan Buku Tamu</h1>
+                <h1 class="h3 mb-4 text-gray-800">Buku Tamu</h1>
             </div>
-            <div class="col text-right">
+            <div class="col text-center">
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Layanan
@@ -18,6 +18,9 @@
                       <li><a class="dropdown-item" href="{{ route('bukutamu.advokasi') }}">ADVOKASI</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="col text-center">
+                <a href="{{ route('bukutamu.printPDF') }}" class="btn btn-danger" target="blank">Cetak</a>
             </div>
         </div>
     </div>
