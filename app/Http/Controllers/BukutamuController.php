@@ -72,7 +72,7 @@ class BukutamuController extends Controller
             'layanan' => 'required',
         ]);
         BukutamuModel::create($request->all());
-        return redirect()->route('bukutamu.index')->with('success','Terimakasih selamat berkunjung');
+        return redirect()->route('bukutamu.create')->with('success','Terimakasih selamat berkunjung');
     }
 
     /**

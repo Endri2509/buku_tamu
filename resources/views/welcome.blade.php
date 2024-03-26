@@ -7,7 +7,7 @@
             <div class="col">
                 <h1 class="h3 mb-4 text-gray-800">Buku Tamu</h1>
             </div>
-            <div class="col text-center">
+            <div class="text-center mb-4">
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Layanan
@@ -19,8 +19,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="col text-center">
-                <a href="{{ route('bukutamu.printPDF') }}" class="btn btn-danger" target="blank">Cetak</a>
+            <div class="text-center mb-4">
+                <a href="{{ route('bukutamu.printPDF') }}" class="btn btn-danger" target="blank" >Cetak PDF</a>
             </div>
         </div>
     </div>
