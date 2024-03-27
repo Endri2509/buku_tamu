@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <h2>Data Tabel</h2>
+    <h2>Data Tabel Buku Tamu</h2>
     <table>
         <thead>
             <tr>
