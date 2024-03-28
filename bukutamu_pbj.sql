@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 6.0.0-dev+20240209.be3c06c7dc
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2024 at 08:17 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Waktu pembuatan: 28 Mar 2024 pada 05.48
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku_tamu`
+-- Struktur dari tabel `buku_tamu`
 --
 
 CREATE TABLE `buku_tamu` (
@@ -34,23 +34,28 @@ CREATE TABLE `buku_tamu` (
   `instansi` varchar(255) NOT NULL,
   `email` varchar(30) NOT NULL,
   `layanan` varchar(255) NOT NULL,
+  `jenis_layanan` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `buku_tamu`
+-- Dumping data untuk tabel `buku_tamu`
 --
 
-INSERT INTO `buku_tamu` (`id`, `nama`, `no_hp`, `instansi`, `email`, `layanan`, `created_at`, `updated_at`) VALUES
-(2, 'Thoriq hafidzuzumar', '0843874284', 'KOMINFO', 'aowkowak@gmail.com', '3', '2024-03-13 21:56:34', '2024-03-13 21:56:34'),
-(3, 'thoriqhaifdz', '0913', 'bapedda', 'thir@gmail.com', '1', '2024-03-14 01:20:15', '2024-03-14 01:20:15'),
-(4, 'aowkoawk', '094239', 'LADS', 'awokwoak@gmail.com', '2', '2024-03-21 00:13:53', '2024-03-21 00:13:53');
+INSERT INTO `buku_tamu` (`id`, `nama`, `no_hp`, `instansi`, `email`, `layanan`, `jenis_layanan`, `created_at`, `updated_at`) VALUES
+(2, 'Thoriq hafidzuzumar', '0843874284', 'KOMINFO', 'aowkowak@gmail.com', '3', '', '2024-03-13 21:56:34', '2024-03-13 21:56:34'),
+(3, 'thoriqhaifdz', '0913', 'bapedda', 'thir@gmail.com', '1', '', '2024-03-14 01:20:15', '2024-03-14 01:20:15'),
+(5, 'endri', '08912345678', 'londo', 'endri@gmail.com', '3', '', '2024-03-21 18:13:18', '2024-03-21 18:13:18'),
+(11, 'adi', '123456456465', 'kominfo', 'adi@gmail.com', '3', '', '2024-03-25 23:46:04', '2024-03-25 23:46:04'),
+(12, 'budi', '123455566', 'setda', 'budi@gmail.com', '1', '', '2024-03-26 06:53:04', '2024-03-26 06:53:04'),
+(13, 'endri', '0891234567', 'PT. abc', 'endri@gmail.com', '2', '', '2024-03-28 01:20:54', '2024-03-28 01:20:54'),
+(14, 'endri', '1234567', 'PT.abc', 'endri@gmail.com', '2', '', '2024-03-28 01:23:33', '2024-03-28 01:23:33');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cs`
+-- Struktur dari tabel `cs`
 --
 
 CREATE TABLE `cs` (
@@ -62,7 +67,7 @@ CREATE TABLE `cs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -78,18 +83,35 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `jenis_layanan`
 --
 
-CREATE TABLE `kategori` (
+CREATE TABLE `jenis_layanan` (
   `id` int(11) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL
+  `id_layanan` int(11) NOT NULL,
+  `jenis_layanan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `jenis_layanan`
+--
+
+INSERT INTO `jenis_layanan` (`id`, `id_layanan`, `jenis_layanan`) VALUES
+(1, 1, 'pengajuan tender'),
+(2, 1, 'konsultasi jenis dan metode pengadaan'),
+(3, 1, 'lain-lain'),
+(4, 2, 'verifikasi berkas penyedia'),
+(5, 2, 'permohonan akun PP/PPK'),
+(6, 2, 'konsultasi RUP'),
+(7, 2, 'konsultasi PDN'),
+(8, 2, 'konsultasi E-katalog'),
+(9, 2, 'lain-lain'),
+(10, 3, 'Konsultasi terkait permasalahan pengadaan barang dan jasa');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `layanan`
+-- Struktur dari tabel `layanan`
 --
 
 CREATE TABLE `layanan` (
@@ -98,7 +120,7 @@ CREATE TABLE `layanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `layanan`
+-- Dumping data untuk tabel `layanan`
 --
 
 INSERT INTO `layanan` (`id`, `nama_layanan`) VALUES
@@ -109,7 +131,7 @@ INSERT INTO `layanan` (`id`, `nama_layanan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -119,7 +141,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -131,7 +153,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Struktur dari tabel `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -143,7 +165,7 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -162,7 +184,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -179,50 +201,50 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `buku_tamu`
+-- Indeks untuk tabel `buku_tamu`
 --
 ALTER TABLE `buku_tamu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cs`
+-- Indeks untuk tabel `cs`
 --
 ALTER TABLE `cs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `jenis_layanan`
 --
-ALTER TABLE `kategori`
+ALTER TABLE `jenis_layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `layanan`
+-- Indeks untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_reset_tokens`
+-- Indeks untuk tabel `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -230,60 +252,60 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `buku_tamu`
+-- AUTO_INCREMENT untuk tabel `buku_tamu`
 --
 ALTER TABLE `buku_tamu`
-  MODIFY `id` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `cs`
+-- AUTO_INCREMENT untuk tabel `cs`
 --
 ALTER TABLE `cs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `jenis_layanan`
 --
-ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `jenis_layanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `layanan`
+-- AUTO_INCREMENT untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
