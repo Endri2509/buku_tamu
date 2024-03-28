@@ -51,29 +51,62 @@
                     <div class="col mb-3">
                         <input type="text" class="form-control" name="instansi" placeholder="Instansi/Penyedia" autocomplete="off" value="{{ old('instansi') }}">
                     </div>
-                    <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">ULP</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Pengajuan Tender</a></li>
-                        <li><a class="dropdown-item" href="#">Konsultasi Jenis dan Metode Pengadaan</a></li>
-                        <li><a class="dropdown-item" href="#">Lain-Lain</a></li>
-                    </ul>
-                    <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">LPSE</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Verifikasi Berkas Penyedia</a></li>
-                        <li><a class="dropdown-item" href="#">Permohonan Akun PP/PPK</a></li>
-                        <li><a class="dropdown-item" href="#">Konsultasi RUP</a></li>
-                        <li><a class="dropdown-item" href="#">Konsultasi PDN</a></li>
-                        <li><a class="dropdown-item" href="#">Konsultasi E-Katalog</a></li>
-                        <li><a class="dropdown-item" href="#">Lain-Lain</a></li>
-                    </ul>
+                    {{-- <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">ULP</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Pengajuan Tender</a></li>
+                            <li><a class="dropdown-item" href="#">Konsultasi Jenis dan Metode Pengadaan</a></li>
+                            <li><a class="dropdown-item" href="#">Lain-Lain</a></li>
+                        </ul>
+                    </div> --}}
+                    {{-- <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">LPSE</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Verifikasi Berkas Penyedia</a></li>
+                            <li><a class="dropdown-item" href="#">Permohonan Akun PP/PPK</a></li>
+                            <li><a class="dropdown-item" href="#">Konsultasi RUP</a></li>
+                            <li><a class="dropdown-item" href="#">Konsultasi PDN</a></li>
+                            <li><a class="dropdown-item" href="#">Konsultasi E-Katalog</a></li>
+                            <li><a class="dropdown-item" href="#">Lain-Lain</a></li>
+                        </ul>
+                    </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">ADVOKASI</button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Konsultasi Terkait Permasalahan Pengadaan Barang dan Jasa</a></li>
-                    </ul>
+                            <li><a class="dropdown-item" href="#">Konsultasi Terkait Permasalahan Pengadaan Barang dan Jasa</a></li>
+                        </ul>
+                    </div> --}}
+                    <div class="col mb-3">
+                        <select class="form-select" id="layanan" name="layanan">
+                            <option value="" disabled selected>Pilih Layanan</option>
+                            <option value="1">ULP</option>
+                            <option value="2">LPSE</option>
+                            <option value="3">Advokasi</option>
+                        </select>
                     </div>
+                    <div class="col" id="subLayanan" style="display:none">
+                        <p style="color: red">Pilih Sub Layanan *</p>
+                        <select id="subOpsi" name="jenis_layanan" class="form-control">
+                            <!-- Sub-pilihan untuk Opsi 1 -->
+                            <optgroup id="subOpsi1" label="Silahkan Pilih">
+                                <option value="1">Pengajuan Tender</option>
+                                <option value="2">Konsultasi Jenis dan Metode Pengadaan</option>
+                                <option value="3">Lain-Lain</option>
+                            </optgroup>
+                            <!-- Sub-pilihan untuk Opsi 2 -->
+                            <optgroup id="subOpsi2" label="Silahkan Pilih">
+                                <option value="4">Verifikasi Berkas Penyedia</option>
+                                <option value="5">Permohonan Akun PP/PPK</option>
+                                <option value="6">Konsultasi RUP</option>
+                                <option value="7">Konsultasi PDN</option>
+                                <option value="8">Konsultasi E-Katalog</option>
+                                <option value="9">Lain-Lain</option>
+                            </optgroup>
+                            <!-- Sub-pilihan untuk Opsi 3 -->
+                            <optgroup id="subOpsi3" label="Silahkan Pilih">
+                              <option value="10">Konsultasi Terkait Permasalahan Pengadaan Barang dan Jasa</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
@@ -81,6 +114,7 @@
         </div>
     </div>
 
+    <script src="{{ asset('template/js/pilihan.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/jQuery-Keyboard/dist/css/keyboard-dark.min.css" rel="stylesheet">

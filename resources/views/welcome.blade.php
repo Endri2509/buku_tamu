@@ -37,6 +37,7 @@
                         <th>Email</th>
                         <th>Instansi</th>
                         <th>Layanan</th>
+                        <th>Jenis Layanan</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -49,6 +50,7 @@
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->instansi }}</td>
                             <td>{{ $item->nama_layanan }}</td>
+                            <td>{{ $item->jenis_layanan }}</td>
                         </tr>
                         @endforeach
                     </tbody>
