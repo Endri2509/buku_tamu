@@ -85,7 +85,7 @@
                         </select>
                     </div>
                     <div class="col" id="subLayanan" style="display:none">
-                        <p style="color: red">Pilih Sub Layanan *</p>
+                        <p style="color: black">Pilih Sub Layanan *</p>
                         <select id="subOpsi" name="jenis_layanan" class="form-control">
                             <!-- Sub-pilihan untuk Opsi 1 -->
                             <optgroup id="subOpsi1" label="Silahkan Pilih">

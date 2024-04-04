@@ -14,7 +14,7 @@
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid #dddddd;
+            border: 1px solid #000000;
             text-align: left;
             padding: 8px;
         }
@@ -34,6 +34,7 @@
                 <th>Email</th>
                 <th>Instansi</th>
                 <th>Layanan</th>
+                <th>Jenis Layanan</th>
             </tr>
         </thead>
         <tbody>
@@ -45,6 +46,7 @@
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->instansi }}</td>
                 <td>{{ $item->nama_layanan }}</td>
+                <td>{{ $item->jenis_layanan }}</td>
             </tr>
             @endforeach
         </tbody>
