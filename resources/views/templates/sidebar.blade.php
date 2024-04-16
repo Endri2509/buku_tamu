@@ -16,7 +16,11 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('bukutamu.index') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Grafik</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 

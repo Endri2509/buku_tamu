@@ -78,7 +78,7 @@
                     </div> --}}
                     <div class="col mb-3">
                         <select class="form-select" id="layanan" name="layanan">
-                            <option value="" disabled selected>Pilih Layanan</option>
+                            <option value="" disabled selected style="color: black;">Pilih Layanan</option>
                             <option value="1">ULP</option>
                             <option value="2">LPSE</option>
                             <option value="3">Advokasi</option>
