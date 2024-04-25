@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukutamuController;
+use App\Http\Controllers\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,6 @@ Route::get('/lpse',[BukutamuController::class, 'lpse'])->name('bukutamu.lpse');
 Route::get('/advokasi',[BukutamuController::class, 'advokasi'])->name('bukutamu.advokasi');
 Route::get('/',[BukutamuController::class, 'create'])->name('bukutamu.create');
 Route::post('/',[BukutamuController::class, 'store'])->name('bukutamu.store');
+Route::get('/chart', [BukutamuController::class,'chart'])->name('bukutamu.chart');
 
 Route::get('/print', [BukutamuController::class, 'printPDF'])->name('bukutamu.printPDF');

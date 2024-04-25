@@ -13,11 +13,11 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('bukutamu.index') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-home"></i>
             <span>Dashboard</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('bukutamu.index') }}">
+        <a class="nav-link" href="{{ route('bukutamu.chart') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Grafik</span></a>
     </li>

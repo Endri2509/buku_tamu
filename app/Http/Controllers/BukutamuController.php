@@ -7,6 +7,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Dompdf\Dompdf;
+use App\Charts\Bukutamu;
+use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
 class BukutamuController extends Controller
 {
@@ -126,5 +128,10 @@ class BukutamuController extends Controller
         $pdf->render();
         return $pdf->stream('Buku Tamu.pdf', ['Attachment' => false]);
     }
-    
+
+    public function chart(){
+        $chart = new Bukutamu;
+
+        return view('chart', compact('chart'));
+    }
 }
